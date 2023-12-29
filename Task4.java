@@ -6,7 +6,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class Task4 {
-    private static final String API_KEY = "2527f49884de4199c06b2289"; // Replace with your API key
+    private static final String API_KEY = "Replace with your API key";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -47,24 +47,20 @@ public class Task4 {
 
             reader.close();
 
-            // Parse JSON response to get exchange rate
             String jsonResponse = response.toString();
             double rate = parseExchangeRate(jsonResponse, targetCurrency);
 
             return rate;
         } catch (IOException e) {
             e.printStackTrace();
-            return 1.0; // Default to 1:1 exchange rate in case of error
+            return 1.0;
         }
     }
 
     private static double parseExchangeRate(String jsonResponse, String targetCurrency) {
-        // Parse JSON response to get the exchange rate for the target currency
-        // Implement your JSON parsing logic based on the response structure of the API
-        // For simplicity, let's assume a straightforward JSON structure here
-        // Replace this with a proper JSON parsing library in a real-world scenario
 
-        // Simulated JSON parsing
+
+        
         double rate = 1.0;
 
         if (jsonResponse.contains("\"" + targetCurrency + "\":")) {
